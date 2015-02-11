@@ -1,0 +1,6 @@
+*.c filter=expandtab
+*.h filter=expandtab
+*.pl filter=expandtab
+*.py filter=expandtab
+*.sh filter=expandtab
+*.txt filter=expandtab

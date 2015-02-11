@@ -1,0 +1,74 @@
+alignment bottom_left
+background no
+border_width 1
+cpu_avg_samples 2
+default_color white
+default_shade_color #858687
+default_outline_color black
+double_buffer yes
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades yes
+use_xft yes
+xftfont Droid Sans Mono:size=8
+xftalpha 1
+gap_x 5 
+gap_y 635
+minimum_size 5 5
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+own_window yes
+own_window_transparent yes
+own_window_class Conky
+own_window_type desktop
+own_window_hints sticky,skip_taskbar
+stippled_borders 8
+update_interval 1
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+cpu_avg_samples 2
+net_avg_samples 2
+if_up_strictness address
+temperature_unit fahrenheit
+
+TEXT
+${color #A2A2A2}$nodename ${alignr}linux-$kernel
+${time %a, %d %b %Y %T} ${alignr}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ kord temperature}° ${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ kord humidity}%
+${color #858687}${stippled_hr 1,1}
+${color #858687}System:
+${color #858687} Uptime:${color #A2A2A2} $uptime ${color #858687}- Load:${color #A2A2A2} $loadavg
+${color #858687} CPU Usage:${color #A2A2A2} $cpu% ${color #858687} ${cpubar}
+${color #A2A2A2}${cpugraph cpu0 16,309 000000 858687}
+${color #858687} RAM Usage:${color #A2A2A2} $mem/$memmax - $memperc% ${color #858687} ${membar}
+${color #858687} Swap Usage:${color #A2A2A2} $swap/$swapmax - $swapperc% ${color #858687} ${swapbar}
+${color #858687} Processes:${color #A2A2A2} $processes  ${color #858687}Running:${color #A2A2A2} $running_processes
+${color #858687}${stippled_hr 1,1}
+${color #858687}Networking:
+${if_up eth0} ${color #858687}eth0: ${color #A2A2A2}${addr eth0}${alignr}${color #858687} Connects: ${color #A2A2A2}${tcp_portmon 1 65535 count}
+${color #A2A2A2}${downspeedgraph eth0 16,150 000000 858687} ${color #A2A2A2}${upspeedgraph eth0 16,150 000000 858687}
+ ${color #858687}Down:${color #A2A2A2} ${downspeed eth0}/s${color #858687}${alignc}${offset 60}Up:${color #A2A2A2} ${upspeed eth0}/s ${endif} ${if_up wlan0} 
+ ${color #858687}wlan0: ${color #A2A2A2}${addr wlan0}${alignr}${color #858687}Connects: ${color #A2A2A2}${tcp_portmon 1 65535 count}
+${color #A2A2A2}${downspeedgraph wlan0 16,150 000000 858687} ${color #A2A2A2}${upspeedgraph wlan0 16,150 000000 858687}
+ ${color #858687}Down:${color #A2A2A2} ${downspeed wlan0} k/s${color #858687}${alignc}${offset 60}Up:${color #A2A2A2} ${upspeed wlan00} k/s ${endif}
+${color #858687}${stippled_hr 1,1}
+${color #858687}File Systems:
+ ${color #858687}/ ${color #A2A2A2}${fs_used /}/${fs_size /} ${color #858687}${fs_bar /}
+${color #858687}${stippled_hr 1,1}
+${color #858687}Name                PID   CPU%   MEM%
+${color #A2A2A2} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${color #A2A2A2} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${color #A2A2A2} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${color #A2A2A2} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+${color #A2A2A2} ${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5}
+${color #858687}Mem usage          
+${color #A2A2A2} ${top_mem name 1} ${top_mem pid 1} ${top_mem cpu 1} ${top_mem mem 1}
+${color #A2A2A2} ${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}
+${color #A2A2A2} ${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
+${color #A2A2A2} ${top_mem name 4} ${top_mem pid 4} ${top_mem cpu 4} ${top_mem mem 4}
+${color #A2A2A2} ${top_mem name 5} ${top_mem pid 5} ${top_mem cpu 5} ${top_mem mem 5}

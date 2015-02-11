@@ -1,0 +1,16 @@
+[user]
+	email = mrexalt@users.noreply.github.com
+	name = mrexalt
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+	autocrlf = input
+	pager = less -x4
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[web]
+	browser = google-chrome-beta
+[filter "expandtab"]
+    clean = expand --tabs=4 --initial
